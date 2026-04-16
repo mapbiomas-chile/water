@@ -23,8 +23,8 @@ LAYER="${3:-biggrids_chile}"
 START_IDX="${4:-0}"
 END_IDX="${5:-42}"
 
-PYTHON_BIN="${PYTHON_BIN:-python}"
-SCRIPT_PATH="${SCRIPT_PATH:-/opt/tmp/mapbiomas-chile/water/download_fabdem_from_gpkg.py}"
+PYTHON_BIN="${PYTHON_BIN:-/home/ecastillo/shared/conda-env/bin/python}"
+SCRIPT_PATH="${SCRIPT_PATH:-/home/ecastillo/mapbiomas/water/download_fabdem_from_gpkg.py}"
 PARALLELISM="${PARALLELISM:-24}"
 
 if [[ ! -f "$INPUT_GPKG" ]]; then
