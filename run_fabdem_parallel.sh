@@ -23,7 +23,7 @@ LAYER="${3:-biggrids_chile}"
 START_IDX="${4:-0}"
 END_IDX="${5:-42}"
 
-PYTHON_BIN="${PYTHON_BIN:-/opt/tmp/mapbiomas-chile/water/.venv/bin/python}"
+PYTHON_BIN="${PYTHON_BIN:-python}"
 SCRIPT_PATH="${SCRIPT_PATH:-/opt/tmp/mapbiomas-chile/water/download_fabdem_from_gpkg.py}"
 PARALLELISM="${PARALLELISM:-24}"
 
@@ -34,6 +34,11 @@ fi
 
 if [[ ! -f "$SCRIPT_PATH" ]]; then
   echo "Python script not found: $SCRIPT_PATH"
+  exit 1
+fi
+
+if ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
+  echo "Python executable not found in PATH: $PYTHON_BIN"
   exit 1
 fi
 
