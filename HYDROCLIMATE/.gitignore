@@ -1,0 +1,7 @@
+# Keep local data out of git
+input/**
+!input/.gitkeep
+export_for_gee/**
+!export_for_gee/.gitkeep
+__pycache__/
+.ipynb_checkpoints/
